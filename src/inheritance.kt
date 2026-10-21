@@ -7,7 +7,7 @@ open class Vehicle(
         println("$name is moving")
     }
 
-    fun stop(){
+    open fun stop(){
         println("$name has stopped")
     }
 }
@@ -21,6 +21,10 @@ class Car(
     color: String
 ): Vehicle(name, color) {
 
+    override fun stop(){
+        println("$engines have stopped")
+    }
+
 }
 
 class Plane(
@@ -29,5 +33,21 @@ class Plane(
     name: String,
     color: String
 ): Vehicle(name,color){
+
+}
+
+
+fun main(){
+    val car =Car(1,4,"BMW","Red")
+    val plane=Plane(4,2,"Boieng","Black")
+
+    car.move()
+    plane.move()
+    car.stop()
+    plane.stop()
+
+
+
+
 
 }
