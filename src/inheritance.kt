@@ -16,14 +16,18 @@ open class Vehicle(
 
 class Car(
     val engines: Int,
-    val doors: Int, name: String, color: String
+    val doors: Int,
+    name: String,
+    color: String
 ): Vehicle(name, color) {
 
 }
 
 class Plane(
     val engines: Int,
-    val doors:Int
-){
+    val doors:Int,
+    name: String,
+    color: String
+): Vehicle(name,color){
 
 }
