@@ -24,7 +24,30 @@
 ================================================================================================
 
  */
+class User(
+    var firstName: String,
+    var lastName:  String,
+    var age: Int
+){
 
+    init{
+        println("User: $firstName was created")
+    }
+
+}
+@Deprecated("Use newFunction() instead")
+fun oldFunction() {
+    println("This is the old function")
+}
+
+fun newFunction() {
+    println("This is the new function")
+}
+
+fun main() {
+    oldFunction()
+    newFunction()
+}
 
 
 fun main(args: Array<String>){
