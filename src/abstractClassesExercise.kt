@@ -2,10 +2,8 @@ abstract class Vehicle2(
     var brand:String,
     val registrationNumber: String
 ){
-    open fun move(
-    ){
-        TODO("Implement this later")
-    }
+    abstract fun move(
+    )
 
     fun displayDetails(){
         println("""
