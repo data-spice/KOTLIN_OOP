@@ -39,6 +39,9 @@ fun main(){
 
     for(direction in Direction.values()){
         println(direction)
-    }
 
+    }
+    println(Direction.WEST.distance)
+    Direction.WEST.distance=20
+    println(Direction.WEST.distance)
 }
