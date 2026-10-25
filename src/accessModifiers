@@ -95,6 +95,49 @@ protected items are only accessible in the class and its subclasses
 ```
 
 
+=============
+4) INTERNAL
+=============
+internal makes the thing accessible throughout the same module
+
+```
+        internal class DeviceDiagnostics {
+
+            internal fun runDiagnostics() {
+                println("Running internal diagnostics...")
+            }
+        }
+
+        fun main() {
+            val diagnostics = DeviceDiagnostics()
+            diagnostics.runDiagnostics()
+        }
+
+```
+
+A module can contain many Kotlin files, classes, interfaces, and functions. The important thing is that the code belongs to the same compilation unit.
+
+Let's use your Smart Hospital project to understand this.
+1. Imagine your project has several files
+Your project might look like this:
+SmartHospital project
+
+One Kotlin module
+
+For example, the main source set compiled together
+
+
+Main.kt
+
+MedicalDevice.kt
+
+HeartRateMonitor.kt
+
+Auditable.kt
 
 
 
+
+These files can belong to the same module even though they are separate files.
+
+A file is not the same thing as a module. A module can contain many files.
