@@ -58,5 +58,43 @@ and via the functions that expose it.
         //println( device.secretCode) // Compilation error
     }
 
+=============
+3) PROTECTED
+=============
+protected items are only accessible in the class and its subclasses
+
+```
+        open class MedicalDevice {
+
+            protected var isOperational = false
+
+            protected fun runDiagnostic() {
+                println("Running device diagnostic...")
+            }
+        }
+
+        class HeartRateMonitor : MedicalDevice() {
+
+            fun performSelfTest() {
+                runDiagnostic()
+                isOperational = true
+
+                println("Self-test completed.")
+            }
+        }
+
+        fun main() {
+            val monitor = HeartRateMonitor()
+
+            monitor.performSelfTest()
+
+            // println(monitor.isOperational) // Compilation error
+            // monitor.runDiagnostic()        // Compilation error
+        }
+
+```
+
+
+
 
 
