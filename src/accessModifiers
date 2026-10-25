@@ -1,0 +1,62 @@
+There are two groups of concepts in question:
+    1. Visibility modifiers: public, private, protected and internal
+    2. The inner keyword: This controls how a nested class relates to an object of its outer class
+
+
+Assuming a hospital management system for our examples:
+
+
+==================================================================
+PART 1: KOTLIN VISIBILITY MODIFIERS
+==================================================================
+Imagine you are building a software for a hospital. Some information should be accessible to anyone,
+some only inside a class and some only within a particular module.
+
+Visibility modifiers let you to control that access.
+
+============
+1) PUBLIC
+============
+public is Kotlin's default visibility for most declarations.
+
+    ```
+        class MedicalDevice{
+                public val deviceName ="Heart Monitor"
+                public fun displayName(){
+                    println($deviceName)
+               }
+       }
+
+    fun main(){
+        val device= MedicalDevice()
+        println(device.deviceName)
+        device.displayName()
+    }
+
+    ```
+
+
+============
+2) PRIVATE
+============
+private hides implementational detail from code that shouldn't access them.It is only accessible in the class
+and via the functions that expose it.
+
+```
+    class MedicalDevice{
+        private var secretCode= "HD-456"
+
+        fun verifyCode(code: String): Boolean{
+            return code== secretCode
+        }
+    }
+
+    fun main(){
+        val device= MedicalDevice()
+        println(device.verifyCode("HD-456")) //true
+
+        //println( device.secretCode) // Compilation error
+    }
+
+
+
